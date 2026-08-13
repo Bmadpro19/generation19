@@ -1,128 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Braison portifolio</title>
+    <title>Braison | 19GEN Portfolio</title>
+    <meta name="description" content="Braison's professional portfolio showcasing web development skills, projects, and services.">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <header id="home">
-
-        <nav>
-          <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="email-contact-me.html">SERVICES</a></li>
-            <li><a href="#support">SUPPORT</a></li>
-          </ul>  
-        </nav>
-        <img src="19GEN.jpg" alt="image">
-        <h1>
-            Welcome to <span style="color:#06B6D4;">19</span><span style="color: #1E3A8A;">GEN</span>
-        </h1>
-        <p>Hi,I'm Braison,the founder of <strong>19GEN</strong>.As a young web developer and aspiring programmer,I am committed to continuously learning,improving my skills,and exploring new technologies.I specialize in creating modern,responsive,and user-friendly website while building a strong foundation for a future in software development.</p>
-        
-        <a href="#projects" class="btn">View Projects</a>
-    </header>
-    <!--my skills-->
-    <section>
-        <h2 class="tittle">My Skills</h2>
-
-        <div class="skills">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">GitHub</div>
-            <div class="skill">Responsive Design</div>
-             
-        </div>  
-    </section>
-
-    <!--Projects-->
-    <section id="projects">
-        <h2 class="tittle">Projects</h2>
-        
-    <div class="projects">
-        <div class="card">
-            <h3>
-                Chat App
-            </h3>
-            <p>
-                Simple chatting system with modern UI.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>
-                Login Form
-            </h3>
-            <p>
-              Animated login page with glass effect.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>
-                Business Website
-            </h3>
-            <p>Website for posting business products.</p>
-        </div>
-
+    <div class="welcome-loader" id="welcomeLoader" aria-live="polite">
+        <div class="loader-text" aria-label="Welcome 19GEN"></div>
     </div>
 
-    </section>
+    <header class="hero" id="home">
+        <nav class="topbar">
+            <div class="brand">19<span>GEN™</span></div>
 
-    <!--hey mista-->
+            <div class="nav-actions">
+                <div class="lang-switcher" aria-label="Language switcher">
+                    <button class="lang-btn active" type="button" data-lang="en">ENG</button>
+                    <button class="lang-btn" type="button" data-lang="sw">SWA</button>
+                </div>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            </div>
 
-    <section id="support">
-        <div class="support">
-            <h3 style="color: orange; text-decoration: underline 2px #000; margin-bottom: 5px;">Let's Build Something Great Together</h3>
-            <p>Welcome to Bryson's portfolio-developer and founder of the <strong>19GEN</strong> brand.</p>
+            <ul class="nav-menu">
+                <li><a href="#home" data-i18n="navHome">Home</a></li>
+                <li><a href="#about" data-i18n="navAbout">About</a></li>
+                <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+                <li><a href="#services" data-i18n="navServices">Services</a></li>
+                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+            </ul>
+        </nav>
 
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="eyebrow" data-i18n="eyebrow">welcome & join with 19GEN</p>
+                <h1 data-i18n="heroTitle">Building digital experiences with <span>curiosity</span>, creativity, and growth.</h1>
+               <p class="intro" data-i18n="intro">
+                  Hi, I’m <strong>Braison</strong>, founder of <strong>19GEN™</strong> — a young programmer and web developer passionate about building meaningful digital experiences, learning every day, and turning ideas into reality.
+                </p>
 
-            <p>This is a space for creativity,ideas,and projects built with passion and purpose.Even though the journey is still growing,the vision is to create meaningful and impactful digital experiences.
-            </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn primary" data-i18n="viewProjects">View Projects</a>
+                    <a href="email-contact-me.html" class="btn secondary" data-i18n="hireMe">Work With Me</a>
+                </div>
 
+                <div class="signature-strip">
+                    <div>
+                        <span>Branding</span>
+                        <strong>19GEN™</strong>
+                    </div>
+                   
+                    <div>
+                        <span>Growth</span>
+                        <strong>Always Learning</strong>
+                    </div>
+                </div>
 
-            <p>If you have an idea,project,or need a modern and professional website,feel free to connect with me anytime.</p>
+                <div class="stats">
+                    <div>
+                        <strong>1+</strong>
+                        <span>Years learning</span>
+                    </div>
+                    <div>
+                        <strong>6+</strong>
+                        <span>Skills sharpened</span>
+                    </div>
+                    <div>
+                        <strong>5+</strong>
+                        <span>Featured projects</span>
+                    </div>
+                </div>
+            </div>
 
-            <p>I can help you build:
-                 
-                <ul>
-                    <li>Portfolio Website</li>
-                    <li>Business Website </li>
-                    <li>Landing Page</li>
-                    <li>Modern UI Design</li>
-                </ul>
-            
-            </p>
-       
-
-            <p>Clean design,smooth performance,and affordable pricing.</p>
-
-            <h3>Let's connect and create something amazing together.</h3>
-
-            <span>Thank you for visiting.</span>
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <img src="19GEN.jpg" alt="Braison portrait">
+                    <div class="mini-badge">Available for work</div>
+                </div>
+            </div>
         </div>
+    </header>
 
-    </section>
+    <main>
+        <section class="about" id="about">
+            <div class="section-heading">
+                <p class="eyebrow dark" data-i18n="aboutTag">About me</p>
+                <h2 data-i18n="aboutTitle">Creative, curious, and committed to growth.</h2>
+            </div>
 
-    <!--Contact place-->
-    <section id="contact">
-        <h2 class="tittle">Contact Me</h2>
-        <a href="https://wa.me/255693608018?text=hey mr braison">Chat on WhatsApp</a>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-i18n="aboutText1">
+                        I am <strong >Braison</strong>, founder of <strong>19GEN™</strong>, a young programmer and web developer who is still learning and growing. I enjoy turning ideas into digital products that are practical, clean, and useful for real people.
+                    </p>
+                    <p data-i18n="aboutText2">
+                        I am continuously improving my skills, learning new technologies, and building better experiences one project at a time.
+                    </p>
+                </div>
 
-        
-        
+                <div class="skills-wrap">
+                    <h3 data-i18n="skillsTitle">Core skills</h3>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">GitHub</span>
+                        <span class="skill">Responsive Design</span>
+                        <span class="skill">UI Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  
-    
-    </section>
+        <section class="projects" id="projects">
+            <div class="section-heading center">
+                <p class="eyebrow dark" data-i18n="portfolioTag">Portfolio</p>
+                <h2 data-i18n="portfolioTitle">Selected projects</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="card">
+                    <div class="card-top gevcia"></div>
+                    <div class="card-body">
+                        <h3>GEVCIA CV Builder</h3>
+                        <p>Professional CV and portfolio builder designed to help people create strong personal profiles and standout resumes.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-top chat"></div>
+                    <div class="card-body">
+                        <h3>Sample Chat App</h3>
+                        <p>Simple, modern messaging interface designed for smooth conversations and clean user experience.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-top login"></div>
+                    <div class="card-body">
+                        <h3>Login Form</h3>
+                        <p>Stylish authentication page with a glassmorphism look and fluid interactive design.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-top business"></div>
+                    <div class="card-body">
+                        <h3>Business Website</h3>
+                        <p>Professional online presence tailored for product promotion and business branding.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-top bmadbot"></div>
+                    <div class="card-body">
+                        <h3>Bmad Bot</h3>
+                        <p>Smart conversational bot designed to answer questions, support users, and keep engagement flowing smoothly.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="section-heading center">
+                <p class="eyebrow dark" data-i18n="servicesTag">Services</p>
+                <h2 data-i18n="servicesTitle">How I can help</h2>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Portfolio Websites</h3>
+                    <p>Custom personal websites that present your brand, work, and story with confidence.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Business Websites</h3>
+                    <p>Professional landing pages and business websites built for visibility and credibility.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Modern UI Design</h3>
+                    <p>Clean, responsive interfaces with smooth structure, color, and readability in mind.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="support" id="support">
+            <div class="support-box">
+                <p class="eyebrow dark" data-i18n="buildTag">Let’s build something great together</p>
+                <h2 data-i18n="buildTitle">Clean design, smooth performance, and meaningful digital experiences.</h2>
+                <p data-i18n="buildText">
+                    Whether you need a portfolio, a business website, or a polished landing page, I can help turn your idea into a smart, modern design.
+                </p>
+                <ul>
+                    <li data-i18n="serviceList1">Portfolio Website</li>
+                    <li data-i18n="serviceList2">Business Website</li>
+                    <li data-i18n="serviceList3">Landing Page</li>
+                    <li data-i18n="serviceList4">Modern UI Design</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-box">
+                <p class="eyebrow dark" data-i18n="contactTag">Contact</p>
+                <h2 data-i18n="contactTitle">Let’s create something amazing.</h2>
+                <p data-i18n="contactText">Open to new projects, collaborations, and website work.</p>
+                <div class="contact-actions">
+                    <a href="https://wa.me/255616126697?text=Hi%20Braison%2C%20I%20would%20like%20to%20work%20with%20you." class="btn primary" target="_blank" rel="noreferrer" data-i18n="whatsappBtn">Chat on WhatsApp</a>
+                    <a href="email-contact-me.html" class="btn secondary" data-i18n="messageBtn">Send a message</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         &copy; 2026 Braison (Bmadpro19) | All Rights Reserved.
     </footer>
 
+    <script>
+        const loader = document.getElementById('welcomeLoader');
+        const loaderText = document.querySelector('.loader-text');
+        const welcomeText = 'WELCOME 19GEN';
+        let charIndex = 0;
+
+        function typeWelcome() {
+            if (charIndex <= welcomeText.length) {
+                loaderText.textContent = welcomeText.slice(0, charIndex);
+                charIndex += 1;
+                setTimeout(typeWelcome, 120);
+            } else {
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                }, 500);
+            }
+        }
+
+        const translations = {
+            en: {
+                navHome: 'Home',
+                navAbout: 'About',
+                navProjects: 'Projects',
+                navServices: 'Services',
+                navContact: 'Contact',
+                eyebrow: 'Welcome & join with 19GEN.',
+                heroTitle: 'Building digital experiences with <span>curiosity</span>, creativity, and growth.',
+                intro: 'Hi, I’m <strong>Braison</strong>, founder of <strong>19GEN™</strong> — a young programmer and web developer passionate about building meaningful digital experiences, learning every day, and turning ideas into reality.',
+                viewProjects: 'View Projects',
+                hireMe: 'Work With Me',
+                aboutTag: 'About me',
+                aboutTitle: 'Creative, curious, and committed to growth.',
+                aboutText1: 'I am a young programmer and web developer who is still learning and growing. I enjoy turning ideas into digital products that are practical, clean, and useful for real people.',
+                aboutText2: 'I am continuously improving my skills, learning new technologies, and building better experiences one project at a time.',
+                skillsTitle: 'Core skills',
+                portfolioTag: 'Portfolio',
+                portfolioTitle: 'Selected projects',
+                servicesTag: 'Services',
+                servicesTitle: 'How I can help',
+                buildTag: 'Let’s build something great together',
+                buildTitle: 'Clean design, smooth performance, and meaningful digital experiences.',
+                buildText: 'Whether you need a portfolio, a business website, or a polished landing page, I can help turn your idea into a smart, modern design.',
+                serviceList1: 'Portfolio Website',
+                serviceList2: 'Business Website',
+                serviceList3: 'Landing Page',
+                serviceList4: 'Modern UI Design',
+                contactTag: 'Contact',
+                contactTitle: 'Let’s create something amazing.',
+                contactText: 'Open to new projects, collaborations, and website work.',
+                whatsappBtn: 'Chat on WhatsApp',
+                messageBtn: 'Send a message'
+            },
+            sw: {
+                navHome: 'Nyumbani',
+                navAbout: 'Kuhusu',
+                navProjects: 'Miradi',
+                navServices: 'Huduma',
+                navContact: 'Mawasiliano',
+                eyebrow: 'Karibu & jumuika na 19GEN.',
+                heroTitle: 'Kutengeneza matumizi ya kidijitali kwa <span>shauku</span>, ubunifu, na ukuaji.',
+                intro: 'Habari, mimi ni <strong>Braison</strong>, mwanzilishi wa <strong>19GEN™</strong> — programa mdogo na mtengenezaji wa tovuti ninayependa kujenga uzoefu bora wa kidijitali, kujifunza kila siku, na kubadilisha mawazo kuwa vitu halisi.',
+                viewProjects: 'Tazama Miradi',
+                hireMe: 'Fanya Kazi Nami',
+                aboutTag: 'Kuhusu mimi',
+                aboutTitle: 'Mwenye ubunifu, maswali, na hamu ya kukua.',
+                aboutText1: 'Mimi ni programmer mdogo na web developer mdogo ambaye bado anajifunza na kukua. Napenda kugeuza mawazo kuwa bidhaa za kidijitali zinazofaa, kuwa safi, na kuleta faida kwa watu halisi.',
+                aboutText2: 'Ninaendelea kuboresha ujuzi wangu, kujifunza teknolojia mpya, na kujenga matumizi bora hatua kwa hatua.',
+                skillsTitle: 'Ujuzi mkuu',
+                portfolioTag: 'Portfolio',
+                portfolioTitle: 'Miradi iliyochaguliwa',
+                servicesTag: 'Huduma',
+                servicesTitle: 'Naweza kukusaidia vipi',
+                buildTag: 'Hebu tuunde kitu kikubwa pamoja',
+                buildTitle: 'Muundo safi, utendaji mzuri, na matumizi yenye maana ya kidijitali.',
+                buildText: 'Iwe unahitaji tovuti ya kibinafsi, tovuti ya biashara, au ukurasa wa kuvutia, naweza kukusaidia kugeuza wazo lako kuwa muundo wa kisasa na mzuri.',
+                serviceList1: 'Tovuti ya Portifolio',
+                serviceList2: 'Tovuti ya Biashara',
+                serviceList3: 'Ukurasa wa Kuuza',
+                serviceList4: 'UI ya Kisasa',
+                contactTag: 'Mawasiliano',
+                contactTitle: 'Hebu tuunde kitu cha ajabu.',
+                contactText: 'Nipo tayari kwa miradi mipya, ushirikiano, na kazi za tovuti.',
+                whatsappBtn: 'Zungumza WhatsApp',
+                messageBtn: 'Tuma ujumbe'
+            }
+        };
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const topbar = document.querySelector('.topbar');
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const i18nNodes = document.querySelectorAll('[data-i18n]');
+
+        const translatePage = (lang) => {
+            const dict = translations[lang];
+            i18nNodes.forEach((node) => {
+                const key = node.dataset.i18n;
+                if (dict[key]) {
+                    const value = dict[key];
+                    node.innerHTML = value;
+                }
+            });
+            document.documentElement.lang = lang;
+            langButtons.forEach((button) => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+        };
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = topbar.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.textContent = isOpen ? '✕' : '☰';
+        });
+
+        langButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                translatePage(button.dataset.lang);
+            });
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(typeWelcome, 180);
+            translatePage('en');
+        });
+    </script>
 </body>
 </html>

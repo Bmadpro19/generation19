@@ -3,92 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>email-contact-me</title>
-
+    <title>Chat with us | 19GEN</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
-        body{
-          color: white;
-    background-image: url(contact.jpg);
-    background-size: cover;
-
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    align-items: center;
-           
+        html {
+            scroll-behavior: smooth;
         }
-    form{
-          padding:25px;
-    background: rgba(27, 26, 26, 0.219);
-    backdrop-filter: blur(5px);
-    max-width: 400px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 3px 5px black;
-    border: 2px #88ff00 solid;
-    color: white;
-    
-    
-    }
-    input{
-            width: 100%;
-    padding: 14px;
-    margin-bottom:15px;
-    align-items: center;
-    border-radius:8px;
-    font-size: 18px;
-    outline: none;
-    border: #88ff00 1.5px solid;
-    background: rgba(0, 0, 0, 0.345);
-   color: white;
-    }
 
-    textarea{
-        padding: 25px 15px;
-        border-radius: 20px;
-        outline: none;
-        border: 1px solid #88ff00;
-         background: rgba(0, 0, 0, 0.345);
-        color: white;
-    }
-    button{
-        padding: 10px 15px;
-        border-radius: 10px;
-        border:1px solid #88ff00;
-        background: #222320c4;
-        box-shadow: 1px 5px 10px;
-        color: #88ff00;
-    }
-    p{
-        margin-bottom: 10px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-  
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(135deg, rgba(2, 6, 23, 0.82), rgba(9, 17, 31, 0.72)),
+                url('header.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 26px;
+            color: #e2e8f0;
+        }
+
+        .contact-shell {
+            width: min(1100px, 100%);
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            background: rgba(15, 23, 42, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(2, 8, 23, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .info-panel {
+            position: relative;
+            padding: 42px 30px;
+            background: linear-gradient(180deg, rgba(34, 211, 238, 0.12), rgba(15, 23, 42, 0.78));
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #67e8f9;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.08;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .info-panel p {
+            color: #dbeafe;
+            line-height: 1.8;
+            max-width: 420px;
+            margin-bottom: 26px;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(103, 232, 249, 0.25);
+            color: #f8fafc;
+            font-size: 0.8rem;
+        }
+
+        .live-wrap {
+            position: relative;
+            margin-bottom: 24px;
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .live-track {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            animation: slideLoop 18s linear infinite;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
+        }
+
+        @keyframes slideLoop {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-30%);
+            }
+        }
+
+        .form-panel {
+            padding: 32px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 550px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 28px 24px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .language-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .lang-btn {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            color: #dbeafe;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            color: #02141f;
+            border-color: transparent;
+            font-weight: 700;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #34d399;
+            box-shadow: 0 0 18px rgba(52, 211, 153, 0.8);
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #dbeafe;
+            font-weight: 600;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            background: rgba(15, 23, 42, 0.7);
+            color: #f8fafc;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: rgba(34, 211, 238, 0.9);
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.18);
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .button-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .note {
+            color: #a5b4fc;
+            font-size: 0.75rem;
+        }
+
+        button {
+            border: none;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            color: #02141f;
+            padding: 14px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-width: 150px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(34, 211, 238, 0.26);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 820px) {
+            .contact-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .info-panel {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 20px;
+            }
+
+            .form-panel {
+                padding-top: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 14px;
+            }
+
+            .info-panel, .form-panel {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .button-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <form action="https://formsubmit.co/braisonsanga19@gmail.com" method="post">
-       <p>Hey,here you are free to chat with us,to ask for any services that you want, and if you have any question you can ask here.</p>
+    <div class="contact-shell">
+        <div class="info-panel">
+            <span class="eyebrow">19GEN</span>
+            <h1 data-i18n="title">Let’s build your next project.</h1>
+            <p data-i18n="intro">Need a professional portfolio, business website, landing page, or custom digital solution? Send your message and let’s create something powerful together.</p>
 
-        <div class="box">
-            <input type="text" name="name" placeholder="Enter your name" required>
+            <div class="badge-row">
+                <span class="badge">Portfolio</span>
+                <span class="badge">Business</span>
+                <span class="badge">Landing Page</span>
+                <span class="badge">UI Design</span>
+            </div>
         </div>
 
-        <div class="box">
-            <input type="email" name="email" placeholder="Enter your email" required>
-        </div>
+        <div class="form-panel">
+            <form action="https://formsubmit.co/braisonsanga19@gmail.com" method="POST">
+                <div class="language-switch" aria-label="Language switcher">
+                    <button type="button" class="lang-btn active" data-lang="en">ENG</button>
+                    <button type="button" class="lang-btn" data-lang="sw">SWA</button>
+                </div>
 
-        <div class="box">
-            <textarea name="message"  placeholder="Write here......"></textarea>
+                <div class="header-row">
+                    <div class="form-title" data-i18n="formTitle">Chat with us</div>
+                    <span class="dot" aria-label="online"></span>
+                </div>
+
+                <div class="live-wrap" aria-live="polite">
+                    <div class="live-track">WELCOME • CHAT WITH US • WELCOME • CHAT WITH US •</div>
+                </div>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New message from 19GEN portfolio">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="field">
+                    <label for="name" data-i18n="name">Full name</label>
+                    <input id="name" type="text" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email" data-i18n="email">Email address</label>
+                    <input id="email" type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="field">
+                    <label for="service" data-i18n="service">Service</label>
+                    <select id="service" name="service">
+                        <option value="Portfolio Website" data-en="Portfolio Website" data-sw="Tovuti ya Portifolio">Portfolio Website</option>
+                        <option value="Business Website" data-en="Business Website" data-sw="Tovuti ya Biashara">Business Website</option>
+                        <option value="Landing Page" data-en="Landing Page" data-sw="Ukurasa wa Kuuza">Landing Page</option>
+                        <option value="UI Design" data-en="UI Design" data-sw="Ubunifu wa UI">UI Design</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="message" data-i18n="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                </div>
+
+                <div class="button-row">
+                    <span class="note" data-i18n="note">We usually reply within 24 hours.</span>
+                    <button type="submit" data-i18n="button">Send Message</button>
+                </div>
+            </form>
         </div>
-        <button class="submit">Send</button>
-    </form>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: 'Let’s build your next project.',
+                intro: 'Need a professional portfolio, business website, landing page, or custom digital solution? Send your message and let’s create something powerful together.',
+                formTitle: 'Chat with us',
+                name: 'Full name',
+                email: 'Email address',
+                service: 'Service',
+                message: 'Message',
+                note: 'We usually reply within 24 hours.',
+                button: 'Send Message',
+                select: 'Portfolio Website'
+            },
+            sw: {
+                title: 'Hebu tuunde mradi wako ujao.',
+                intro: 'Unahitaji tovuti ya kitaalamu, tovuti ya biashara, ukurasa wa kutangaza, au suluhu ya dijitali? Tuma ujumbo lako na tuunde kitu chenye nguvu pamoja.',
+                formTitle: 'Zungumza nasi',
+                name: 'Jina kamili',
+                email: 'Anwani ya barua pepe',
+                service: 'Huduma',
+                message: 'Ujumbe',
+                note: 'Kwa kawaida tunajibu ndani ya masaa 24.',
+                button: 'Tuma Ujumbe',
+                select: 'Tovuti ya Portifolio'
+            }
+        };
+
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const translatedNodes = document.querySelectorAll('[data-i18n]');
+        const serviceSelect = document.getElementById('service');
+
+        function updateLanguage(lang) {
+            const dict = translations[lang];
+            translatedNodes.forEach((node) => {
+                const key = node.dataset.i18n;
+                if (dict[key]) {
+                    node.textContent = dict[key];
+                }
+            });
+
+            const options = serviceSelect.querySelectorAll('option');
+            options.forEach((option) => {
+                const value = option.getAttribute(lang === 'sw' ? 'data-sw' : 'data-en');
+                if (value) {
+                    option.textContent = value;
+                }
+            });
+
+            document.documentElement.lang = lang;
+            langButtons.forEach((button) => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+        }
+
+        langButtons.forEach((button) => {
+            button.addEventListener('click', () => updateLanguage(button.dataset.lang));
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert('Tafadhali jaza sehemu zote zinazohitajika.');
+            }
+        });
+    </script>
 </body>
 </html>
